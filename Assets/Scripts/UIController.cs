@@ -73,8 +73,8 @@ public class UIController : MonoBehaviour
     public void SetText()
     {
         Score.text = currentScore.ToString();
-        numText.text = currentTime.ToString();
-        time.text = CurrentTime.ToString();
+        numText.text = currentTime.ToString("F1");
+        time.text = CurrentTime.ToString("F1");
     }
     public void SetHighScore()
     {

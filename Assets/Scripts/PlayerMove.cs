@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
     public NavMeshAgent agent;
     public bool playerCanMove;
 
+    [Range(0.1f, 7f)] public float attackRange;
+    public LayerMask targetMask;
+
     public Camera kamera;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,11 @@ public class PlayerMove : MonoBehaviour
     }
     public void KillRadius()
     {
-        //Physics.SphereCast();
+        Collider[] hit = Physics.OverlapSphere(transform.position, attackRange, targetMask);
+            foreach (var hitCollider in hit)
+            {
+                //what the Animal needs to do.
+            }
     }
     public void MovePlayer()
     {
@@ -50,5 +57,10 @@ public class PlayerMove : MonoBehaviour
     public void MoveStop()
     {
         agent.ResetPath();
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

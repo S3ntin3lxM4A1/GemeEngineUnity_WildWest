@@ -1213,8 +1213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: -35}
-  m_SizeDelta: {x: 41.1158, y: 28.9711}
+  m_AnchoredPosition: {x: 0.000022888, y: -34.6}
+  m_SizeDelta: {x: 136.3745, y: 28.9711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554668040
 MonoBehaviour:
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.00007628217, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2281,7 +2281,7 @@ MonoBehaviour:
   animalCount: 0
   randomZahl: 5
   timeForDeer: 4
-  timeForBunny: 12
+  timeForBunny: 14
   deerPref: {fileID: 1048021733}
   bunnyPref: {fileID: 1387299054}
 --- !u!1 &1111279423
@@ -2802,8 +2802,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00002169609, y: 11}
-  m_SizeDelta: {x: 41.1158, y: 28.9711}
+  m_AnchoredPosition: {x: 0.000022888, y: 16.949}
+  m_SizeDelta: {x: 207.4079, y: 33.8983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335820667
 MonoBehaviour:
@@ -2966,7 +2966,7 @@ MonoBehaviour:
   uiCont: {fileID: 1875384739}
   particle: {fileID: 7310395498880466675, guid: cae8621f5d96a0d4eb3099b32ee1d1de,
     type: 3}
-  time: {fileID: 7914637823450734112, guid: ca01bae7f8de0c0468c65790b13e81d2, type: 3}
+  time: {fileID: 7914637823450734112, guid: df0c83504e2c7dc4e972b4ca2323b888, type: 3}
   rs: {fileID: 1109201294}
   walkPointRange: 20
   walkPointSet: 0

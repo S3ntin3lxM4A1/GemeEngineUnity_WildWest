@@ -47,7 +47,7 @@ public class DeerController : MonoBehaviour
         Instantiate(particle, transform.position, qa);
         Instantiate(time, transform.position, qa);    
         uiCont.SetScore(points);
-        uiCont.PlusTime(5);
+        uiCont.PlusTime(3);
         Destroy(this.gameObject);
         rs.AnimalCountDown();
     }

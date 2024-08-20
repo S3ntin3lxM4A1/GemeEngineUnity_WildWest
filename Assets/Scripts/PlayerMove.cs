@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     public LayerMask mask;
     public NavMeshAgent agent;
     public bool playerCanMove;
+    public bool playerCanKill;
 
     [Range(0.1f, 7f)] public float attackRange;
     public LayerMask targetMask;
@@ -16,7 +17,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,18 +41,32 @@ public class PlayerMove : MonoBehaviour
     }
     public void KillRadius()
     {
-        Collider[] hit = Physics.OverlapSphere(transform.position, attackRange, targetMask);
+        if (playerCanKill)
+        {
+            Collider[] hit = Physics.OverlapSphere(transform.position, attackRange, targetMask);
             foreach (var hitCollider in hit)
             {
-                //what the Animal needs to do.
+                if (hitCollider.CompareTag("Bunny"))
+                {
+                    var bc = hitCollider.gameObject.GetComponent<BunnyController>();
+                    bc.TakeAttack();
+                }
+                if (hitCollider.CompareTag("Deer"))
+                {
+                    var dc = hitCollider.gameObject.GetComponent<DeerController>();
+                    dc.TakeAttack();
+                }
             }
+        }
     }
     public void MovePlayer()
     {
+        playerCanKill = true;
         playerCanMove = true;
     }
     public void MoveNoPLayer()
     {
+        playerCanKill = false;
         playerCanMove = false;
     }
     public void MoveStop()

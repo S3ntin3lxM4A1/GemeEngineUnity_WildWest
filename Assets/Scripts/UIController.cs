@@ -8,13 +8,14 @@ public class UIController : MonoBehaviour
     public PlayerMove plRef;
 
     [Header("- - - - - - Main Menu - - - - - -")]
+    public GameObject mainMenuPanal;
+    public TMP_Text menuHighScoreText;
     [Header("- - - - - - Play Scene - - - - - -")]
     [Space(5)]
     [Header("- - Before Play - -")]
     public GameObject background;
     public TMP_Text numText;
-    public float currentTime;
-    public float setTime;
+    public float currentTime, setTime;
     [Space(5)]
     [Header("- - In Level - -")]
     public GameObject levelBackground;
@@ -43,7 +44,13 @@ public class UIController : MonoBehaviour
     {
         SetText();
         SetHighScore();
-        if (currentTime >= 0)
+        if (mainMenuPanal.activeSelf)
+        {
+            levelBackground.SetActive(false);
+            background.SetActive(false);
+            overBackground.SetActive(false);
+        }
+        else if (currentTime >= 0)
         {
             plRef.MoveNoPLayer();
             levelBackground.SetActive(false);
@@ -82,9 +89,10 @@ public class UIController : MonoBehaviour
         {
             currentHighScore = currentScore;
             highScore.text = currentHighScore.ToString();
+            menuHighScoreText.text = highScore.text;
         }
     }
-    public void SetSCore(int temp)
+    public void SetScore(int temp)
     {
         currentScore += temp;
     }
@@ -110,6 +118,15 @@ public class UIController : MonoBehaviour
     }
     public void MenuButton()
     {
-
+        currentScore = 0;
+        currentTime = setTime;
+        CurrentTime = setRemainingTime;
+        mainMenuPanal.SetActive(true);
+    }
+    public void ResetHighScore()
+    {
+        currentHighScore = 0;
+        highScore.text = currentHighScore.ToString();
+        menuHighScoreText.text = highScore.text;
     }
 }

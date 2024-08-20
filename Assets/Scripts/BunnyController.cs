@@ -22,7 +22,7 @@ public class BunnyController : MonoBehaviour
     public bool walkPointSet;
     public Vector3 walkPoint;
     public LayerMask whatIsGround;
-    public Transform player;
+    public GameObject player;
     public float fleeMultiplier = 1;
     public float fleeRange = 30;
     // Start is called before the first frame update
@@ -75,8 +75,8 @@ public class BunnyController : MonoBehaviour
     }
     public void Flee()
     {
-        Vector3 runTo = transform.position + ((transform.position - player.position) * fleeMultiplier);
-        float distance = Vector3.Distance(transform.position, player.position);
+        Vector3 runTo = transform.position + ((transform.position - player.transform.position) * fleeMultiplier);
+        float distance = Vector3.Distance(transform.position, player.transform.position);
         if (distance < fleeRange) agent.SetDestination(runTo);
     }
     private void OnDrawGizmosSelected()

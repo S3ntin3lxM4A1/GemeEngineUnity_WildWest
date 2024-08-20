@@ -10,6 +10,7 @@ public class RandomSpawner : MonoBehaviour
     public float min, max;
     private float randomx, randomz;
     public float timeForDeer, timeForBunny;
+    private float currentDeerTime, currentBunnyTime;
     public GameObject deerPref, bunnyPref;
 
     // Start is called before the first frame update
@@ -26,13 +27,13 @@ public class RandomSpawner : MonoBehaviour
 
         if (animalCount < animalMaxCount)
         {
-            if (timeForDeer >= 0)
-                timeForDeer -= Time.deltaTime;
+            if (currentDeerTime >= 0)
+                currentDeerTime -= Time.deltaTime;
             else
                 SpawnDeer();
 
-            if (timeForBunny >= 0)
-                timeForBunny -= Time.deltaTime;
+            if (currentBunnyTime >= 0)
+                currentBunnyTime -= Time.deltaTime;
             else
                 SpawnBunny(); 
         }
@@ -40,11 +41,13 @@ public class RandomSpawner : MonoBehaviour
 
     public void SpawnDeer()
     {
+        currentDeerTime = timeForDeer;
         Instantiate(deerPref, new Vector3(randomx, 0, randomz), Quaternion.identity);
         animalCount++;
     }
     public void SpawnBunny()
     {
+        currentBunnyTime = timeForBunny;
         Instantiate(bunnyPref, new Vector3(randomx, 0, randomz), Quaternion.identity);
         animalCount++;
     }

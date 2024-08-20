@@ -16,7 +16,7 @@ public class DeerController : MonoBehaviour
 
     public UIController uiCont;
     public RandomSpawner rs;
-    public GameObject particle;
+    public GameObject particle, time;
     private Quaternion qa;
 
     public float walkPointRange;
@@ -45,7 +45,9 @@ public class DeerController : MonoBehaviour
     public void TakeAttack()
     {
         Instantiate(particle, transform.position, qa);
+        Instantiate(time, transform.position, qa);    
         uiCont.SetScore(points);
+        uiCont.PlusTime(5);
         Destroy(this.gameObject);
         rs.AnimalCountDown();
     }

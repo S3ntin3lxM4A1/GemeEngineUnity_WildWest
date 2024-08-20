@@ -1676,8 +1676,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.9, y: -25}
-  m_SizeDelta: {x: 114.9662, y: 50}
+  m_AnchoredPosition: {x: 108.6, y: -25}
+  m_SizeDelta: {x: 203.7957, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923194445
 MonoBehaviour:
@@ -1917,8 +1917,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -26.900028}
-  m_SizeDelta: {x: 55.803467, y: 50}
+  m_AnchoredPosition: {x: 0.0000076293945, y: -25}
+  m_SizeDelta: {x: 178.8764, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1006751610
 MonoBehaviour:
@@ -2059,6 +2059,7 @@ MonoBehaviour:
   rs: {fileID: 1109201294}
   particle: {fileID: 7310395498880466675, guid: cae8621f5d96a0d4eb3099b32ee1d1de,
     type: 3}
+  time: {fileID: 7914637823450734112, guid: ca01bae7f8de0c0468c65790b13e81d2, type: 3}
   walkPointRange: 20
   walkPointSet: 0
   walkPoint: {x: 0, y: 0, z: 0}
@@ -2120,12 +2121,12 @@ Transform:
   m_GameObject: {fileID: 1048021733}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.65, y: 62.015472, z: -71.22}
+  m_LocalPosition: {x: 1.5595512, y: 0.7975235, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2015152859}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1397784576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1099712375
 GameObject:
@@ -2276,11 +2277,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1d0dc60b6393c049872ebcb3c7b413b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalMaxCount: 10
+  animalMaxCount: 20
   animalCount: 0
   randomZahl: 5
   timeForDeer: 4
-  timeForBunny: 8
+  timeForBunny: 12
   deerPref: {fileID: 1048021733}
   bunnyPref: {fileID: 1387299054}
 --- !u!1 &1111279423
@@ -2584,8 +2585,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -42.346985, y: -25}
-  m_SizeDelta: {x: 84.6933, y: 50}
+  m_AnchoredPosition: {x: -84.9, y: -25}
+  m_SizeDelta: {x: 153.5191, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172526200
 MonoBehaviour:
@@ -2641,7 +2642,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2961,10 +2962,11 @@ MonoBehaviour:
   playerInSightRange: 0
   sightRange: 7
   agent: {fileID: 1387299057}
-  points: 10
+  points: 15
   uiCont: {fileID: 1875384739}
   particle: {fileID: 7310395498880466675, guid: cae8621f5d96a0d4eb3099b32ee1d1de,
     type: 3}
+  time: {fileID: 7914637823450734112, guid: ca01bae7f8de0c0468c65790b13e81d2, type: 3}
   rs: {fileID: 1109201294}
   walkPointRange: 20
   walkPointSet: 0
@@ -3056,11 +3058,11 @@ Transform:
   m_GameObject: {fileID: 1387299054}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.52, y: 62.015472, z: -71.22}
+  m_LocalPosition: {x: -1.3104496, y: 0.7975235, z: 0}
   m_LocalScale: {x: 0.75000006, y: 0.75, z: 0.75000006}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1397784576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1397784575
 GameObject:
@@ -3092,6 +3094,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1099712376}
+  - {fileID: 1387299060}
+  - {fileID: 1048021737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427018109
@@ -4508,7 +4512,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 12
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -4549,8 +4553,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 3718790927413325020}
-  - {fileID: 1387299060}
-  - {fileID: 1048021737}
   - {fileID: 359503111}
   - {fileID: 948999254}
   - {fileID: 1397784576}

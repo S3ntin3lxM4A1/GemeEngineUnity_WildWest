@@ -129,4 +129,8 @@ public class UIController : MonoBehaviour
         highScore.text = currentHighScore.ToString();
         menuHighScoreText.text = highScore.text;
     }
+    public void PlusTime(float tm)
+    {
+        CurrentTime += tm;
+    }
 }

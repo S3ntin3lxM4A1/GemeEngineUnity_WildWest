@@ -15,7 +15,7 @@ public class BunnyController : MonoBehaviour
     public int points;
 
     public UIController uiCont;
-    public GameObject particle;
+    public GameObject particle, time;
     public RandomSpawner rs;
     private Quaternion qa;
 
@@ -45,7 +45,9 @@ public class BunnyController : MonoBehaviour
     public void TakeAttack()
     {
         Instantiate(particle, transform.position, qa);
+        Instantiate(time, transform.position, qa);
         uiCont.SetScore(points);
+        uiCont.PlusTime(5);
         Destroy(this.gameObject);
         rs.AnimalCountDown();
     }

@@ -7,8 +7,8 @@ public class RandomSpawner : MonoBehaviour
     [Header("- - Random Range Number - -")]
 
     public int animalMaxCount, animalCount;
-    public float min, max;
-    public float randomx, randomz;
+    public float randomZahl;
+    private float randomx, randomz;
     public float timeForDeer, timeForBunny;
     private float currentDeerTime, currentBunnyTime;
     public GameObject deerPref, bunnyPref;
@@ -29,8 +29,8 @@ public class RandomSpawner : MonoBehaviour
                  currentDeerTime -= Time.deltaTime;
             else
             {
-                randomx = UnityEngine.Random.Range(min, max);
-                randomz = UnityEngine.Random.Range(min, max);
+                randomx = UnityEngine.Random.Range(-randomZahl, randomZahl);
+                randomz = UnityEngine.Random.Range(-randomZahl, randomZahl);
                 SpawnDeer();
             }
 
@@ -38,8 +38,8 @@ public class RandomSpawner : MonoBehaviour
                 currentBunnyTime -= Time.deltaTime;
             else
             {
-                randomx = UnityEngine.Random.Range(min, max);
-                randomz = UnityEngine.Random.Range(min, max);
+                randomx = UnityEngine.Random.Range(-randomZahl, randomZahl);
+                randomz = UnityEngine.Random.Range(-randomZahl, randomZahl);
                 SpawnBunny();
             }
         }

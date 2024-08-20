@@ -2139,7 +2139,7 @@ GameObject:
   - component: {fileID: 1099712379}
   - component: {fileID: 1099712378}
   - component: {fileID: 1099712377}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,10 +2278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalMaxCount: 10
   animalCount: 0
-  min: -5
-  max: 5
-  randomx: 0
-  randomz: 0
+  randomZahl: 5
   timeForDeer: 4
   timeForBunny: 8
   deerPref: {fileID: 1048021733}

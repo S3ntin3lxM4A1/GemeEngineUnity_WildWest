@@ -16,6 +16,7 @@ public class BunnyController : MonoBehaviour
 
     public UIController uiCont;
     public GameObject particle;
+    public RandomSpawner rs;
     private Quaternion qa;
 
     public float walkPointRange;
@@ -46,6 +47,7 @@ public class BunnyController : MonoBehaviour
         Instantiate(particle, transform.position, qa);
         uiCont.SetScore(points);
         Destroy(this.gameObject);
+        rs.AnimalCountDown();
     }
 
     public void Patroling()

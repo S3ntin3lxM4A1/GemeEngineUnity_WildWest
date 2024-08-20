@@ -8,7 +8,7 @@ public class RandomSpawner : MonoBehaviour
 
     public int animalMaxCount, animalCount;
     public float min, max;
-    private float randomx, randomz;
+    public float randomx, randomz;
     public float timeForDeer, timeForBunny;
     private float currentDeerTime, currentBunnyTime;
     public GameObject deerPref, bunnyPref;
@@ -22,20 +22,26 @@ public class RandomSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        randomx = UnityEngine.Random.Range(min, max);
-        randomz = UnityEngine.Random.Range(min, max);
 
         if (animalCount < animalMaxCount)
         {
             if (currentDeerTime >= 0)
-                currentDeerTime -= Time.deltaTime;
+                 currentDeerTime -= Time.deltaTime;
             else
+            {
+                randomx = UnityEngine.Random.Range(min, max);
+                randomz = UnityEngine.Random.Range(min, max);
                 SpawnDeer();
+            }
 
             if (currentBunnyTime >= 0)
                 currentBunnyTime -= Time.deltaTime;
             else
-                SpawnBunny(); 
+            {
+                randomx = UnityEngine.Random.Range(min, max);
+                randomz = UnityEngine.Random.Range(min, max);
+                SpawnBunny();
+            }
         }
     }
 

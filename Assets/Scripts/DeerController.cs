@@ -15,6 +15,7 @@ public class DeerController : MonoBehaviour
     public int points;
 
     public UIController uiCont;
+    public RandomSpawner rs;
     public GameObject particle;
     private Quaternion qa;
 
@@ -46,6 +47,7 @@ public class DeerController : MonoBehaviour
         Instantiate(particle, transform.position, qa);
         uiCont.SetScore(points);
         Destroy(this.gameObject);
+        rs.AnimalCountDown();
     }
 
     public void Patroling()

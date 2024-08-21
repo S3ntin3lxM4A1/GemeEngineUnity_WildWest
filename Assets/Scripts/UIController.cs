@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class UIController : MonoBehaviour
     public GameObject overBackground;
     public TMP_Text overScoreText;
     public TMP_Text overHighScoreText;
+    [Space(5)]
+    [Header("- - Difficulty - -")]
+    public Slider difSlider;
+    public TMP_Text difText;
+    private float difNum;
     [Header("- - - - - - Sound - - - - - -")]
     public AudioSource musikSource;
     public AudioClip menuMusik, playMusik;
@@ -81,7 +87,8 @@ public class UIController : MonoBehaviour
             TimeOverMenu();
             overBackground.SetActive(true);
         }
-               
+        difNum = difSlider.value;
+        difText.text = difNum.ToString();
     }
     public void SetText()
     {
@@ -108,7 +115,7 @@ public class UIController : MonoBehaviour
     }
     public void TimeInPlay()
     {
-        CurrentTime -= Time.deltaTime;
+        CurrentTime -= Time.deltaTime * difNum;
     }
     public void TimeOverMenu()
     {

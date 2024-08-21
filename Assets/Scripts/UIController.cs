@@ -31,10 +31,15 @@ public class UIController : MonoBehaviour
     public GameObject overBackground;
     public TMP_Text overScoreText;
     public TMP_Text overHighScoreText;
+    [Header("- - - - - - Sound - - - - - -")]
+    public AudioSource musikSource;
+    public AudioClip menuMusik, playMusik;
 
     // Start is called before the first frame update
     void Start()
     {
+        musikSource.clip = menuMusik;
+        musikSource.Play();
         currentTime = setTime;
         CurrentTime = setRemainingTime;
     }
@@ -60,6 +65,7 @@ public class UIController : MonoBehaviour
         }
         else if (CurrentTime >= 0)
         {
+            //musikSource.PlayOneShot();
             plRef.MovePlayer();
             levelBackground.SetActive(true);
             TimeInPlay();
@@ -80,8 +86,8 @@ public class UIController : MonoBehaviour
     public void SetText()
     {
         Score.text = currentScore.ToString();
-        numText.text = currentTime.ToString("F1");
-        time.text = CurrentTime.ToString("F1");
+        numText.text = currentTime.ToString("F0");
+        time.text = CurrentTime.ToString("F0");
     }
     public void SetHighScore()
     {
@@ -122,6 +128,8 @@ public class UIController : MonoBehaviour
         currentTime = setTime;
         CurrentTime = setRemainingTime;
         mainMenuPanal.SetActive(true);
+        musikSource.clip = menuMusik;
+        musikSource.Play();
     }
     public void ResetHighScore()
     {
@@ -132,5 +140,9 @@ public class UIController : MonoBehaviour
     public void PlusTime(float tm)
     {
         CurrentTime += tm;
+    }
+    public void PlayButton() { 
+        musikSource.clip = playMusik;
+        musikSource.Play();
     }
 }

@@ -14,6 +14,10 @@ public class PlayerMove : MonoBehaviour
     public LayerMask targetMask;
 
     public Camera kamera;
+
+    public AudioSource mySource, myAnimalSource;
+    public AudioClip myClip;
+    public AudioClip[] myAnimalClips;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,11 +54,18 @@ public class PlayerMove : MonoBehaviour
                 {
                     var bc = hitCollider.gameObject.GetComponent<BunnyController>();
                     bc.TakeAttack();
+                    mySource.PlayOneShot(myClip);
+                    myAnimalSource.clip = myAnimalClips[Random.Range(0, myAnimalClips.Length)];
+                    myAnimalSource.Play();
                 }
                 if (hitCollider.CompareTag("Deer"))
                 {
                     var dc = hitCollider.gameObject.GetComponent<DeerController>();
                     dc.TakeAttack();
+                    mySource.PlayOneShot(myClip);
+                    myAnimalSource.clip = myAnimalClips[Random.Range(0, myAnimalClips.Length)];
+                    myAnimalSource.Play();
+
                 }
             }
         }

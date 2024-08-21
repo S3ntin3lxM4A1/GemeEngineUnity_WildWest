@@ -26,6 +26,10 @@ public class BunnyController : MonoBehaviour
     public GameObject player;
     public float fleeMultiplier = 1;
     public float fleeRange = 30;
+
+    //public AudioSource mysource;
+    //public AudioClip myClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +50,7 @@ public class BunnyController : MonoBehaviour
     {
         Instantiate(particle, transform.position, qa);
         Instantiate(time, transform.position, qa);
+        //mysource.Play();
         uiCont.SetScore(points);
         uiCont.PlusTime(6);
         Destroy(this.gameObject);

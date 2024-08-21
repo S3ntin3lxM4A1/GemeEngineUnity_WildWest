@@ -26,6 +26,9 @@ public class DeerController : MonoBehaviour
     public GameObject player;
     public float fleeMultiplier = 1;
     public float fleeRange = 30;
+
+    //public AudioSource mySource;
+    //public AudioClip myClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +48,8 @@ public class DeerController : MonoBehaviour
     public void TakeAttack()
     {
         Instantiate(particle, transform.position, qa);
-        Instantiate(time, transform.position, qa);    
+        Instantiate(time, transform.position, qa);
+        //mySource.PlayOneShot(myClip);
         uiCont.SetScore(points);
         uiCont.PlusTime(3);
         Destroy(this.gameObject);
